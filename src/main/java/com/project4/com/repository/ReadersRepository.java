@@ -14,7 +14,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface ReadersRepository extends JpaRepository<Readers, Integer> {
     @Query(
-        """
+        value = """
         SELECT
             madocgia,
             ten_doc_gia,
@@ -24,7 +24,14 @@ public interface ReadersRepository extends JpaRepository<Readers, Integer> {
         FROM tbl_docgia
         WHERE ten_doc_gia LIKE CONCAT('%', :query, '%')
         OR diachi LIKE CONCAT('%', :query, '%')
-        """
+        """,
+        countQuery = """
+        SELECT COUNT(*)
+        FROM tbl_docgia
+        WHERE ten_doc_gia LIKE CONCAT('%', :query, '%')
+        OR diachi LIKE CONCAT('%', :query, '%')
+        """,
+        nativeQuery = true
     )
     Page<Object[]> search(String query, Pageable pageable);
 }

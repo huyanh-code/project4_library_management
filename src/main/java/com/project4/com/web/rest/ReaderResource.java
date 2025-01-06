@@ -61,17 +61,17 @@ public class ReaderResource {
      * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body all users.
      */
-    @GetMapping
-    public ResponseEntity<Page<ReadersDTO>> getAll(@org.springdoc.core.annotations.ParameterObject Pageable pageable) {
-        LOG.debug("REST request to get all readers for an admin");
-        if (!onlyContainsAllowedProperties(pageable)) {
-            return ResponseEntity.badRequest().build();
-        }
-
-        final Page<ReadersDTO> page = readerService.getAllReaders(pageable);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
-        return new ResponseEntity<>(page, headers, HttpStatus.OK);
-    }
+    //    @GetMapping
+    //    public ResponseEntity<Page<ReadersDTO>> getAll(@org.springdoc.core.annotations.ParameterObject Pageable pageable) {
+    //        LOG.debug("REST request to get all readers for an admin");
+    //        if (!onlyContainsAllowedProperties(pageable)) {
+    //            return ResponseEntity.badRequest().build();
+    //        }
+    //
+    //        final Page<ReadersDTO> page = readerService.getAllReaders(pageable);
+    //        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(ServletUriComponentsBuilder.fromCurrentRequest(), page);
+    //        return new ResponseEntity<>(page, headers, HttpStatus.OK);
+    //    }
 
     private boolean onlyContainsAllowedProperties(Pageable pageable) {
         return pageable.getSort().stream().map(Sort.Order::getProperty).allMatch(ALLOWED_ORDERED_PROPERTIES::contains);
@@ -122,7 +122,7 @@ public class ReaderResource {
             .build();
     }
 
-    @GetMapping("search")
+    @GetMapping
     public ResponseEntity<Page<ReadersDTO>> search(@org.springdoc.core.annotations.ParameterObject Pageable pageable, String query) {
         LOG.debug("REST request to search books");
 
