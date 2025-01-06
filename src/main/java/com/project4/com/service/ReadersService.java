@@ -71,6 +71,13 @@ public class ReadersService {
         return new ReadersDTO(entity.getMaDocGia(), entity.getTenDocGia(), entity.getGioiTinh(), entity.getDiachi(), entity.getSdt());
     }
 
+    /**
+     * Update a new author.
+     *
+     * @param dto the author details to be update
+     * @return the added author as a DTO
+     */
+
     public ReadersDTO update(ReadersDTO dto) throws InvalidInputException {
         var existingEntity = readerRepository.findById(dto.getMaDocGia());
 
@@ -89,6 +96,11 @@ public class ReadersService {
         return mapEntityToDto(updatedEntity);
     }
 
+    /**
+     * Delete a new author.
+     *
+     * @param readerId the author details to be deleted
+     */
     public void delete(Integer readerId) throws InvalidInputException {
         var existingEntity = readerRepository.findById(readerId);
 

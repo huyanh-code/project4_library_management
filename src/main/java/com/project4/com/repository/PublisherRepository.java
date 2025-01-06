@@ -10,7 +10,28 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 /**
- * Spring Data JPA repository for the {@link PublisherRepository} entity.
+ * Spring Data JPA repository for the {@link Publisher} entity.
  */
 @Repository
-public interface PublisherRepository extends JpaRepository<Publisher, Integer> {}
+public interface PublisherRepository extends JpaRepository<Publisher, Integer> {
+    @Query(
+        value = """
+        SELECT
+            MaNXB,
+            TenNXB,
+            dia_chi,
+            Sdt
+        FROM tbl_nhaxuatban
+        WHERE TenNXB LIKE CONCAT('%', :query, '%')
+        OR dia_chi LIKE CONCAT('%', :query, '%')
+        """,
+        countQuery = """
+        SELECT COUNT(*)
+        FROM tbl_nhaxuatban
+        WHERE TenNXB LIKE CONCAT('%', :query, '%')
+        OR dia_chi LIKE CONCAT('%', :query, '%')
+        """,
+        nativeQuery = true
+    )
+    Page<Object[]> search(String query, Pageable pageable);
+}

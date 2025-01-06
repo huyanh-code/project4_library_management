@@ -28,6 +28,8 @@ public class PublisherDTO {
         return DiaChi;
     }
 
+    // diachi => setDiachi
+    // diaChi
     public void setDiaChi(String diaChi) {
         DiaChi = diaChi;
     }
