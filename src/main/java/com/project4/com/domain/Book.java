@@ -16,6 +16,13 @@ public class Book {
     private int matacgia;
     private int maNXB;
     private int maloai;
+
+    /**
+     * Ma ke sach
+     */
+    @Column(name = "ma_ke")
+    private int maKe;
+
     private int namxb;
     private int soluong;
     private String ghichu;
@@ -27,12 +34,6 @@ public class Book {
      */
     @Column(name = "trang_thai")
     private Integer trangThai;
-
-    /**
-     * Ma ke sach
-     */
-    @Column(name = "ma_ke")
-    private int maKe;
 
     public int getMaSoSach() {
         return maSoSach;

@@ -1,94 +1,24 @@
 package com.project4.com.service.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 public class BookDTO {
 
     private int maSoSach;
     private String tensach;
     private int idTacgia;
-
-    public String getTenTacgia() {
-        return tenTacgia;
-    }
-
-    public void setTenTacgia(String tenTacgia) {
-        this.tenTacgia = tenTacgia;
-    }
-
-    public int getIdTacgia() {
-        return idTacgia;
-    }
-
-    public void setIdTacgia(int idTacgia) {
-        this.idTacgia = idTacgia;
-    }
-
-    private String tenTacgia;
+    private String tenTacGia;
     private int maNXB;
-
-    public String getTenNXB() {
-        return tenNXB;
-    }
-
-    public void setTenNXB(String tenNXB) {
-        this.tenNXB = tenNXB;
-    }
-
     private String tenNXB;
-    private int maloai;
+    private int maLoai;
     private String tenLoai;
-
-    public String getTenLoai() {
-        return tenLoai;
-    }
-
-    public void setTenLoai(String tenLoai) {
-        this.tenLoai = tenLoai;
-    }
-
+    private int Make;
+    private String viTri;
     private int namxb;
     private int soluong;
     private String ghichu;
     private String hinhanh;
-    private int Make;
-
-    public BookDTO() {}
-
-    public BookDTO(
-        int maSoSach,
-        String tensach,
-        int matacgia,
-        String tenTacgia,
-        int maNXB, // 5
-        String tenNXB,
-        int maloai,
-        String tenLoai,
-        int namxb,
-        int soluong, // 10
-        String hinhanh,
-        String ghichu,
-        int make
-    ) {
-        this.maSoSach = maSoSach;
-        this.tensach = tensach;
-        this.idTacgia = matacgia;
-        this.tenTacgia = tenTacgia;
-        this.maNXB = maNXB;
-        this.tenNXB = tenNXB;
-        this.maloai = maloai;
-        this.tenLoai = tenLoai;
-        this.namxb = namxb;
-        this.soluong = soluong;
-        this.ghichu = ghichu;
-        this.hinhanh = hinhanh;
-        Make = make;
-    }
 
     public int getMaSoSach() {
         return maSoSach;
@@ -106,6 +36,22 @@ public class BookDTO {
         this.tensach = tensach;
     }
 
+    public int getIdTacgia() {
+        return idTacgia;
+    }
+
+    public void setIdTacgia(int idTacgia) {
+        this.idTacgia = idTacgia;
+    }
+
+    public String getTenTacGia() {
+        return tenTacGia;
+    }
+
+    public void setTenTacGia(String tenTacGia) {
+        this.tenTacGia = tenTacGia;
+    }
+
     public int getMaNXB() {
         return maNXB;
     }
@@ -114,12 +60,44 @@ public class BookDTO {
         this.maNXB = maNXB;
     }
 
-    public int getMaloai() {
-        return maloai;
+    public String getTenNXB() {
+        return tenNXB;
     }
 
-    public void setMaloai(int maloai) {
-        this.maloai = maloai;
+    public void setTenNXB(String tenNXB) {
+        this.tenNXB = tenNXB;
+    }
+
+    public int getMaLoai() {
+        return maLoai;
+    }
+
+    public void setMaLoai(int maLoai) {
+        this.maLoai = maLoai;
+    }
+
+    public String getTenLoai() {
+        return tenLoai;
+    }
+
+    public void setTenLoai(String tenLoai) {
+        this.tenLoai = tenLoai;
+    }
+
+    public int getMake() {
+        return Make;
+    }
+
+    public void setMake(int make) {
+        Make = make;
+    }
+
+    public String getViTri() {
+        return viTri;
+    }
+
+    public void setViTri(String viTri) {
+        this.viTri = viTri;
     }
 
     public int getNamxb() {
@@ -154,11 +132,37 @@ public class BookDTO {
         this.hinhanh = hinhanh;
     }
 
-    public int getMake() {
-        return Make;
+    public BookDTO(
+        int maSoSach,
+        String tensach,
+        int idTacgia,
+        String tenTacGia,
+        int maNXB,
+        String tenNXB,
+        int maLoai,
+        String tenLoai,
+        int make,
+        String viTri,
+        int namxb,
+        int soluong,
+        String ghichu,
+        String hinhanh
+    ) {
+        this.maSoSach = maSoSach;
+        this.tensach = tensach;
+        this.idTacgia = idTacgia;
+        this.tenTacGia = tenTacGia;
+        this.maNXB = maNXB;
+        this.tenNXB = tenNXB;
+        this.maLoai = maLoai;
+        this.tenLoai = tenLoai;
+        this.Make = make;
+        this.viTri = viTri;
+        this.namxb = namxb;
+        this.soluong = soluong;
+        this.ghichu = ghichu;
+        this.hinhanh = hinhanh;
     }
 
-    public void setMake(int make) {
-        Make = make;
-    }
+    public BookDTO() {}
 }

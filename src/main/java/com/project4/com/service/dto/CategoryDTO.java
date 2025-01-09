@@ -2,28 +2,28 @@ package com.project4.com.service.dto;
 
 public class CategoryDTO {
 
-    public int MaLoai;
-    public String TenLoai;
+    public int maLoai;
+    public String tenLoai;
 
     public int getMaLoai() {
-        return MaLoai;
+        return maLoai;
     }
 
     public void setMaLoai(int maLoai) {
-        MaLoai = maLoai;
+        this.maLoai = maLoai;
     }
 
     public String getTenLoai() {
-        return TenLoai;
+        return tenLoai;
     }
 
     public void setTenLoai(String tenLoai) {
-        TenLoai = tenLoai;
+        this.tenLoai = tenLoai;
     }
 
     public CategoryDTO(int maLoai, String tenLoai) {
-        MaLoai = maLoai;
-        TenLoai = tenLoai;
+        this.maLoai = maLoai;
+        this.tenLoai = tenLoai;
     }
 
     public CategoryDTO() {}

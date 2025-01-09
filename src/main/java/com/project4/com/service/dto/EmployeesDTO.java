@@ -1,29 +1,16 @@
 package com.project4.com.service.dto;
 
-import java.util.Date;
+import lombok.Getter;
+import lombok.Setter;
 
-public class NhanVien {
+public class EmployeesDTO {
 
     private int MaNV;
     private String TenNV;
     private String NamSinh;
     private String GioiTinh;
+    private String DiaChi;
     private String Sdt;
-
-    @Override
-    public String toString() {
-        return MaNV + "-" + TenNV;
-    }
-
-    public NhanVien() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
-
-    public NhanVien(String sdt) {
-        super();
-        Sdt = sdt;
-    }
 
     public int getMaNV() {
         return MaNV;
@@ -57,30 +44,6 @@ public class NhanVien {
         GioiTinh = gioiTinh;
     }
 
-    public String getSdt() {
-        return Sdt;
-    }
-
-    public void setSdt(String sdt) {
-        Sdt = sdt;
-    }
-
-    public Date getNgayBatDau() {
-        return NgayBatDau;
-    }
-
-    public void setNgayBatDau(Date ngayBatDau) {
-        NgayBatDau = ngayBatDau;
-    }
-
-    public int getLuong() {
-        return luong;
-    }
-
-    public void setLuong(int luong) {
-        this.luong = luong;
-    }
-
     public String getDiaChi() {
         return DiaChi;
     }
@@ -89,17 +52,22 @@ public class NhanVien {
         DiaChi = diaChi;
     }
 
-    public NhanVien(int maNV, String tenNV, String namSinh, String gioiTinh, String sdt, String diaChi) {
-        super();
+    public String getSdt() {
+        return Sdt;
+    }
+
+    public void setSdt(String sdt) {
+        Sdt = sdt;
+    }
+
+    public EmployeesDTO(int maNV, String tenNV, String namSinh, String gioiTinh, String diaChi, String sdt) {
         MaNV = maNV;
         TenNV = tenNV;
         NamSinh = namSinh;
         GioiTinh = gioiTinh;
-        Sdt = sdt;
         DiaChi = diaChi;
+        Sdt = sdt;
     }
 
-    private Date NgayBatDau;
-    private int luong;
-    private String DiaChi;
+    public EmployeesDTO() {}
 }
